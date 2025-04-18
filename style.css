@@ -1,0 +1,67 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+header {
+  background: #1a1a1a;
+  color: white;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px;
+  background: #f4f4f4;
+  text-align: center;
+}
+.program {
+  background: white;
+  padding: 20px;
+  width: 30%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.program a {
+  text-decoration: none;
+  color: black;
+}
+.program button {
+  margin-top: 10px;
+}
+section {
+  padding: 40px 20px;
+  border-top: 1px solid #ccc;
+}
+#contact {
+  background: #eee;
+}
+button {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #333;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
