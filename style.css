@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-  --primary-color: #2f4f4f; /* Forest green to match logo */
+  --primary-color: #2f4f4f;
   --text-color: #1d1d1f;
   --light-text: #86868b;
   --background: #ffffff;
@@ -25,28 +25,20 @@ body {
 /* Header */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  z-index: 1000;
   border-bottom: 1px solid rgba(210, 210, 215, 0.3);
-  padding: 0.8rem 2rem;
+  z-index: 1000;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.8rem 2rem;
   max-width: 1200px;
   margin: auto;
-}
-
-.hero-logo {
-  width: 120px;
-  height: auto;
-  margin-bottom: 20px;
 }
 
 .nav-links {
@@ -55,35 +47,51 @@ header {
 }
 
 .nav-links a {
-  color: var(--text-color);
-  font-size: 14px;
   text-decoration: none;
+  color: var(--text-color);
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 14px;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #005bb5;
 }
 
-/* Main Area */
-main {
-  margin-top: 100px;
+.menu-button {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  width: 25px;
+  height: 2px;
+  background: var(--text-color);
 }
 
 /* Hero Section */
+main {
+  margin-top: 80px;
+}
+
 .hero {
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  background: var(--background);
 }
 
 .hero-content {
   max-width: 800px;
+}
+
+.hero-logo {
+  width: 120px;
+  margin-bottom: 25px;
 }
 
 .hero h1 {
@@ -105,14 +113,14 @@ main {
   font-size: 17px;
   font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
 .cta-button:hover {
   background-color: #1f3f3f;
 }
 
-/* Tiles (Sections) */
+/* Tile Sections */
 .tile {
   padding: 100px 20px;
   max-width: 1200px;
@@ -144,12 +152,12 @@ main {
 }
 
 .card {
-  background-color: white;
+  background: white;
   padding: 24px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   text-align: center;
-  height: 320px; /* Fixed height for uniform layout */
+  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -180,7 +188,20 @@ main {
   flex-grow: 1;
 }
 
-/* Buttons */
+.limited-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover .limited-text {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* Buttons inside Cards */
 .btn {
   display: inline-block;
   padding: 10px 24px;
@@ -190,38 +211,11 @@ main {
   font-weight: 500;
   font-size: 14px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
   background-color: #1f3f3f;
-}
-
-/* Limit description text initially */
-.limited-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-/* Expand description on hover */
-.card:hover .limited-text {
-  -webkit-line-clamp: unset;
-  overflow: visible;
-}
-
-/* Reveal Animations */
-.reveal-text, .reveal-element {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--animation-timing) ease, transform var(--animation-timing) ease;
-}
-
-.reveal-text.active, .reveal-element.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Footer */
@@ -263,22 +257,46 @@ footer {
   color: white;
 }
 
+footer .copyright {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Reveal Animation */
+.reveal-text, .reveal-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--animation-timing) ease, transform var(--animation-timing) ease;
+}
+
+.reveal-text.active, .reveal-element.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
+    display: none;
     flex-direction: column;
     background: white;
+    width: 100%;
     position: absolute;
     top: 60px;
     left: 0;
-    right: 0;
-    display: none;
-    padding: 20px;
     border-top: 1px solid #eee;
+    text-align: center;
+    padding: 20px 0;
   }
 
   .nav-links.show {
+    display: flex;
+  }
+
+  .menu-button {
     display: flex;
   }
 
