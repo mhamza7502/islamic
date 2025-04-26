@@ -43,9 +43,10 @@ header {
   margin: auto;
 }
 
-.logo-img {
-  height: 50px;
-  width: auto;
+.hero-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 30px;
 }
 
 .nav-links {
