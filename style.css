@@ -1,4 +1,4 @@
-\/* Global Variables */
+/* Global Variables */
 :root {
   --primary-color: #2f4f4f;
   --text-color: #1d1d1f;
@@ -189,12 +189,14 @@ header {
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(47, 79, 79, 0.2); /* Slight shadow to pop */
 }
 
 .btn:hover {
   background-color: #1f3f3f;
   transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(47, 79, 79, 0.3); /* Stronger shadow on hover */
 }
 
 /* Footer */
