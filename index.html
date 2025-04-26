@@ -7,134 +7,118 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-  <!-- Header: Only Menu -->
+  <!-- Header Navigation -->
   <header>
-  <nav class="nav-container">
-    <div class="nav-links">
-      <a href="#classes">Classes</a>
-      <a href="#health-ethics">Health Ethics</a>
-      <a href="#scholarship">Scholarship</a>
+    <div class="nav-container">
+      <div class="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#classes">Classes</a>
+        <a href="#health-ethics">Health Ethics</a>
+        <a href="#scholarship">Scholarship</a>
+      </div>
     </div>
-  </nav>
-</header>
+  </header>
 
-  <!-- Main Content -->
-  <main>
+  <!-- Logo + Hero Section -->
+  <section class="hero">
+    <img src="logo.png" alt="Ashrafiyya Logo" class="hero-logo" />
+    <div class="hero-content reveal-text">
+      <h1>Learn. Reflect. Grow.</h1>
+      <p>At Ashrafiyya, we believe knowledge is a sacred journey. Rooted in Islamic tradition, we nurture minds and uplift communities through authentic education.</p>
+    </div>
+  </section>
 
-    <!-- Hero Section: Logo + Title -->
-<section class="hero">
-  <div class="hero-content">
-    <img src="logo.png" alt="Ashrafiyya Logo" class="logo-img" />
-    <h1 class="reveal-text">Learn. Reflect. Grow.</h1>
-    <p class="reveal-text">At Ashrafiyya, we believe knowledge is a sacred journey. Rooted in Islamic tradition, we nurture minds and uplift communities through authentic education.</p>
-  </div>
-</section>
+  <!-- Islamic Classes -->
+  <section id="classes" class="tile alternate reveal-element">
+    <h2 class="section-title">Islamic Classes</h2>
+    <p class="intro">Authentic courses to deepen your Islamic knowledge.</p>
 
-    <!-- Islamic Classes (Light Grey Background) -->
-    <section id="classes" class="tile alternate">
-      <h2 class="section-title reveal-text">Islamic Classes</h2>
-      <p class="intro reveal-text">Authentic courses to deepen your Islamic knowledge.</p>
-
-      <div class="card-grid">
-
-        <div class="card reveal-element">
-          <h3>Qur'an Studies</h3>
-          <p class="limited-text">Learn proper recitation, meanings, and tafsir of the Qur'an.</p>
-          <a href="https://forms.gle/YOUR_QURAN_FORM_ID" class="btn" target="_blank">Register</a>
-        </div>
-
-        <div class="card reveal-element">
-          <h3>Hadith</h3>
-          <p class="limited-text">Study the sayings of the Prophet Muhammad (PBUH) and their application today.</p>
-          <a href="https://forms.gle/YOUR_HADITH_FORM_ID" class="btn" target="_blank">Register</a>
-        </div>
-
-        <div class="card reveal-element">
-          <h3>Fiqh</h3>
-          <p class="limited-text">Understand Islamic rulings (Shari'ah) for daily life situations.</p>
-          <a href="https://forms.gle/YOUR_FIQH_FORM_ID" class="btn" target="_blank">Register</a>
-        </div>
-
-        <div class="card reveal-element">
-          <h3>Islamic Ethics</h3>
-          <p class="limited-text">Develop Islamic manners (Akhlaq) and strong personal character.</p>
-          <a href="https://forms.gle/YOUR_ETHICS_FORM_ID" class="btn" target="_blank">Register</a>
-        </div>
-
-        <div class="card reveal-element">
-          <h3>Islamic History</h3>
-          <p class="limited-text">Explore the rich history and legacy of the Muslim civilization.</p>
-          <a href="https://forms.gle/YOUR_HISTORY_FORM_ID" class="btn" target="_blank">Register</a>
-        </div>
-
+    <div class="card-grid">
+      <div class="card">
+        <h3>Qur'an Studies</h3>
+        <p class="limited-text">Learn proper recitation, meanings, and tafsir of the Qur'an.</p>
+        <a href="#" class="btn">Register</a>
       </div>
-    </section>
-
-    <!-- Health Ethics (White Background) -->
-    <section id="ethics" class="tile">
-      <h2 class="section-title reveal-text">Health Ethics in Islam</h2>
-      <p class="intro reveal-text">Islamic guidance for medical professionals on ethical patient care and decision-making.</p>
-
-      <div class="card-grid">
-
-        <div class="card reveal-element">
-          <h3>Medical Ethics Basics</h3>
-          <p class="limited-text">Foundations of ethics in Islamic history and practice.</p>
-          <a href="https://forms.gle/YOUR_HEALTH_FORM_ID" class="btn" target="_blank">Register</a>
-        </div>
-
-        <div class="card reveal-element">
-          <h3>Contemporary Issues</h3>
-          <p class="limited-text">Modern healthcare dilemmas addressed through Islamic principles.</p>
-          <a href="https://forms.gle/YOUR_HEALTH_FORM_ID" class="btn" target="_blank">Register</a>
-        </div>
-
+      <div class="card">
+        <h3>Hadith</h3>
+        <p class="limited-text">Study the sayings of the Prophet Muhammad (PBUH) and their application today.</p>
+        <a href="#" class="btn">Register</a>
       </div>
-    </section>
-
-    <!-- Scholarship (Light Grey Background) -->
-    <section id="scholarship" class="tile alternate">
-      <h2 class="section-title reveal-text">Ashrafiyya Scholarship Program</h2>
-      <p class="intro reveal-text">Making Islamic education accessible for all committed students.</p>
-
-      <div class="card-grid">
-        <div class="card wide reveal-element">
-          <h3>Scholarship Support</h3>
-          <p class="limited-text">Apply for scholarships to receive tuition assistance and mentorship opportunities with Ashrafiyya scholars.</p>
-          <a href="https://forms.gle/YOUR_SCHOLARSHIP_FORM_ID" class="btn" target="_blank">Apply Now</a>
-        </div>
+      <div class="card">
+        <h3>Fiqh</h3>
+        <p class="limited-text">Understand Islamic rulings and how they apply to daily life.</p>
+        <a href="#" class="btn">Register</a>
       </div>
-    </section>
+      <div class="card">
+        <h3>Islamic Ethics</h3>
+        <p class="limited-text">Learn Islamic moral principles and spiritual character development.</p>
+        <a href="#" class="btn">Register</a>
+      </div>
+    </div>
+  </section>
 
-  </main>
+  <!-- Health Ethics Section -->
+  <section id="health-ethics" class="tile reveal-element">
+    <h2 class="section-title">Health Ethics in Islam</h2>
+    <p class="intro">A special program for healthcare professionals on ethical decision-making and Islamic guidelines.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Medical Ethics</h3>
+        <p class="limited-text">Islamic perspectives on patient care, informed consent, and end-of-life decisions.</p>
+        <a href="#" class="btn">Register</a>
+      </div>
+      <div class="card">
+        <h3>Bioethics</h3>
+        <p class="limited-text">Islamic rulings on new technologies like IVF, cloning, and genetics.</p>
+        <a href="#" class="btn">Register</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scholarship Section -->
+  <section id="scholarship" class="tile alternate reveal-element">
+    <h2 class="section-title">Ashrafiyya Scholarship</h2>
+    <p class="intro">We support students committed to deepening their Islamic knowledge.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Scholarship Opportunity</h3>
+        <p class="limited-text">Apply to receive full or partial coverage for authentic Islamic learning programs.</p>
+        <a href="#" class="btn">Apply Now</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <h3 class="footer-title">Ashrafiyya</h3>
-      <p class="footer-desc">Dedicated to authentic Islamic education and spiritual growth.</p>
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3 class="footer-title">Ashrafiyya</h3>
+        <p class="footer-desc">Dedicated to authentic Islamic education and spiritual growth.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Contact</h3>
+        <p>Email: info@ashrafiyya.org</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#health-ethics">Health Ethics</a></li>
+          <li><a href="#scholarship">Scholarship</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h3 class="footer-title">Contact</h3>
-      <p>Email: <a href="mailto:info@ashrafiyya.org">info@ashrafiyya.org</a></p>
-      <p>Phone: (123) 456-7890</p>
-    </div>
-    <div>
-      <h3 class="footer-title">Quick Links</h3>
-      <ul class="footer-links">
-        <li><a href="#classes">Classes</a></li>
-        <li><a href="#ethics">Health Ethics</a></li>
-        <li><a href="#scholarship">Scholarship</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>
