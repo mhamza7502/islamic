@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-  --primary-color: #0071e3;
+  --primary-color: #2f4f4f; /* Forest green to match logo */
   --text-color: #1d1d1f;
   --light-text: #86868b;
   --background: #ffffff;
@@ -108,7 +108,7 @@ main {
 }
 
 .cta-button:hover {
-  background-color: #005bb5;
+  background-color: #1f3f3f;
 }
 
 /* Tiles (Sections) */
@@ -148,7 +148,7 @@ main {
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   text-align: center;
-  height: 320px; /* Force equal card heights */
+  height: 320px; /* Fixed height for uniform layout */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -167,7 +167,7 @@ main {
 .card h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  white-space: nowrap; /* Keep titles in one line */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -193,7 +193,7 @@ main {
 }
 
 .btn:hover {
-  background-color: #005bb5;
+  background-color: #1f3f3f;
 }
 
 /* Limit description text initially */
@@ -223,10 +223,68 @@ main {
   transform: translateY(0);
 }
 
+/* Footer */
+footer {
+  background-color: var(--text-color);
+  color: white;
+  padding: 80px 0 40px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-section p,
+.footer-section ul li a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+  color: white;
+}
+
+footer .copyright {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
-    gap: 15px;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links.show {
+    display: flex;
   }
 
   .hero h1 {
