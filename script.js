@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Mobile menu toggle (optional if you add hamburger later)
-  const menuButton = document.querySelector('.menu-button');
-  const navLinks = document.querySelector('.nav-links');
+  // Mobile hamburger toggle
+  const menuButton = document.getElementById('menuButton');
+  const navLinks = document.getElementById('navLinks');
 
   if (menuButton && navLinks) {
     menuButton.addEventListener('click', function() {
@@ -9,33 +9,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Smooth scrolling for navigation links
+  // Smooth scrolling
   const links = document.querySelectorAll('a[href^="#"]');
-
   links.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         window.scrollTo({
-          top: target.offsetTop - 80, // Adjust for fixed header
+          top: target.offsetTop - 80,
           behavior: 'smooth'
         });
       }
 
-      // Close menu after clicking link (for mobile)
-      if (window.innerWidth <= 768 && navLinks && navLinks.classList.contains('show')) {
+      if (window.innerWidth <= 768 && navLinks.classList.contains('show')) {
         navLinks.classList.remove('show');
       }
     });
   });
 
-  // Scroll animation reveal
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
+  // Reveal animations
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
