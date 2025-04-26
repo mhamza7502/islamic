@@ -24,19 +24,19 @@ body {
 
 /* Header */
 header {
-  position: fixed;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(210, 210, 215, 0.3);
   z-index: 1000;
+  position: relative; /* ✅ no fixed */
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1.5rem;
+  padding: 0.8rem 2rem;
   max-width: 1200px;
   margin: auto;
 }
@@ -58,6 +58,7 @@ header {
   color: #005bb5;
 }
 
+/* Menu button (hamburger) */
 .menu-button {
   display: none;
   flex-direction: column;
@@ -113,14 +114,14 @@ main {
   font-size: 17px;
   font-weight: 500;
   text-decoration: none;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .cta-button:hover {
   background-color: #1f3f3f;
 }
 
-/* Tile Sections */
+/* Sections (Tile Layout) */
 .tile {
   padding: 100px 20px;
   max-width: 1200px;
@@ -144,7 +145,7 @@ main {
   font-size: 16px;
 }
 
-/* Card Layout */
+/* Cards */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -188,6 +189,7 @@ main {
   flex-grow: 1;
 }
 
+/* Limited Text Reveal */
 .limited-text {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -201,7 +203,7 @@ main {
   overflow: visible;
 }
 
-/* Buttons inside Cards */
+/* Buttons */
 .btn {
   display: inline-block;
   padding: 10px 24px;
@@ -277,7 +279,7 @@ footer .copyright {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -285,11 +287,11 @@ footer .copyright {
     background: white;
     width: 100%;
     position: absolute;
-    top: 60px;
+    top: 70px; /* below hamburger */
     left: 0;
-    border-top: 1px solid #eee;
     text-align: center;
     padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .nav-links.show {
@@ -298,6 +300,21 @@ footer .copyright {
 
   .menu-button {
     display: flex;
+    flex-direction: column;
+    position: fixed; /* ✅ floating hamburger */
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .menu-button span {
+    width: 25px;
+    height: 2px;
+    background: var(--text-color);
   }
 
   .hero h1 {
