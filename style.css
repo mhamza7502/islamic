@@ -83,10 +83,12 @@ header {
 }
 
 .hero-logo {
-  width: 200px;
-  max-width: 90%;
+  width: 160px; /* smaller on desktop */
+  max-width: 80%;
   margin: 0 auto 30px auto;
   display: block;
+  object-fit: contain;
+  text-align: center;
 }
 
 .hero-content {
