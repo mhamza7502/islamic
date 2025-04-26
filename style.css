@@ -87,7 +87,11 @@ header {
 
 .hero-logo {
   width: 200px;
-  margin-bottom: 30px;
+  max-width: 90%;
+  margin-bottom: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero h1 {
