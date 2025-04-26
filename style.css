@@ -1,14 +1,15 @@
-/* Global Styles */
+/* Global Variables */
 :root {
   --primary-color: #2f4f4f;
   --text-color: #1d1d1f;
   --light-text: #86868b;
   --background: #ffffff;
-  --secondary-background: #f5f5f7;
+  --secondary-background: #f5f5f7; /* light grey */
   --footer-background: #1d1d1f;
   --animation-timing: 0.6s;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -17,29 +18,28 @@
 
 body {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: var(--background);
   color: var(--text-color);
-  background-color: var(--background);
-  line-height: 1.5;
   overflow-x: hidden;
 }
 
 /* Header */
 header {
-  width: 100%;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(210, 210, 215, 0.3);
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  position: relative; /* Not fixed */
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 1rem 2rem;
 }
 
 .nav-links {
@@ -48,23 +48,21 @@ header {
 }
 
 .nav-links a {
-  text-decoration: none;
   color: var(--text-color);
+  text-decoration: none;
   font-weight: 500;
   font-size: 14px;
-  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #005bb5;
+  color: var(--primary-color);
 }
 
-/* Hamburger button */
 .menu-button {
   display: none;
   flex-direction: column;
-  gap: 5px;
   cursor: pointer;
+  gap: 5px;
 }
 
 .menu-button span {
@@ -73,19 +71,14 @@ header {
   background: var(--text-color);
 }
 
-/* Main Area */
-main {
-  margin-top: 10px; /* Small clean margin */
-}
-
-/* Hero Section */
+/* Hero */
 .hero {
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 80px 20px 20px;
   text-align: center;
-  padding: 0 20px;
 }
 
 .hero-content {
@@ -93,7 +86,7 @@ main {
 }
 
 .hero-logo {
-  width: 180px; /* Bigger logo */
+  width: 180px;
   margin-bottom: 30px;
 }
 
@@ -108,26 +101,12 @@ main {
   margin-bottom: 30px;
 }
 
-.cta-button {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 12px 28px;
-  border-radius: 999px;
-  font-size: 17px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #1f3f3f;
-}
-
-/* Sections (Tiles) */
+/* Section Styles */
 .tile {
   padding: 100px 20px;
   max-width: 1200px;
   margin: auto;
+  background-color: var(--background);
 }
 
 .tile.alternate {
@@ -135,15 +114,15 @@ main {
 }
 
 .section-title {
-  text-align: center;
   font-size: 36px;
+  text-align: center;
   margin-bottom: 10px;
 }
 
 .intro {
   text-align: center;
-  color: var(--light-text);
   margin-bottom: 40px;
+  color: var(--light-text);
   font-size: 16px;
 }
 
@@ -155,25 +134,19 @@ main {
 }
 
 .card {
-  background: white;
+  background: #fff;
   padding: 24px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
   transition: transform 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-}
-
-.card.wide {
-  max-width: 700px;
-  margin: auto;
 }
 
 .card h3 {
@@ -205,45 +178,41 @@ main {
   overflow: visible;
 }
 
-/* Buttons */
+/* Button */
 .btn {
-  display: inline-block;
-  padding: 10px 24px;
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   color: white;
+  padding: 10px 22px;
   border-radius: 999px;
-  font-weight: 500;
-  font-size: 14px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn:hover {
   background-color: #1f3f3f;
+  transform: scale(1.05);
 }
 
 /* Footer */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 footer {
-  background-color: var(--footer-background);
+  background: var(--footer-background);
   color: white;
-  padding: 40px 0 20px;
+  padding: 60px 20px 30px;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
-  margin-bottom: 30px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .footer-section h3 {
-  font-size: 18px;
   margin-bottom: 15px;
+  font-size: 18px;
 }
 
 .footer-section p,
@@ -258,14 +227,14 @@ footer {
 }
 
 .footer-section ul li {
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .footer-section ul li a:hover {
   color: white;
 }
 
-/* Reveal Animation */
+/* Animation Classes */
 .reveal-text, .reveal-element {
   opacity: 0;
   transform: translateY(20px);
@@ -277,19 +246,19 @@ footer {
   transform: translateY(0);
 }
 
-/* Mobile Responsive */
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: white;
-    width: 100%;
     position: absolute;
     top: 70px;
-    left: 0;
+    right: 20px;
+    background: white;
+    width: 200px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .nav-links.show {
@@ -298,21 +267,9 @@ footer {
 
   .menu-button {
     display: flex;
-    flex-direction: column;
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
-    background: white;
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-  }
-
-  .menu-button span {
-    width: 25px;
-    height: 2px;
-    background: var(--text-color);
   }
 
   .hero h1 {
@@ -323,23 +280,23 @@ footer {
     font-size: 18px;
   }
 
-  .hero-logo {
-    width: 140px;
-  }
-
   .card-grid {
     grid-template-columns: 1fr;
-  }
-
-  .card {
-    height: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .cta-button {
-    font-size: 15px;
-    padding: 10px 20px;
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 18px;
   }
 
   .tile {
