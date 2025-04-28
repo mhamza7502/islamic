@@ -1,174 +1,231 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* GLOBAL STYLES */
+:root {
+  --primary-color: #2f4f4f;
+  --background: #ffffff;
+  --alternate-background: #f8f9fa;
+  --text-color: #222;
+  --light-text-color: #666;
 }
 
-/* Fonts */
 body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background: #fff;
-  color: #333;
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: var(--background);
+  color: var(--text-color);
 }
 
-/* Top Contact Bar */
-.contact-bar {
-  background: #f8f8f8;
-  padding: 8px 0;
-  text-align: center;
+/* TOP CONTACT BAR */
+.top-bar {
+  background: #f2f2f2;
   font-size: 14px;
-  color: #555;
+  color: #333;
+  padding: 6px 12px;
+  text-align: center;
 }
 
-/* Hero */
+/* NAVIGATION */
+header {
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.nav-container a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.nav-container a:hover {
+  color: var(--primary-color);
+}
+
+/* HERO SECTION */
 .hero {
   text-align: center;
-  padding: 30px 20px 10px;
+  padding: 40px 20px 20px;
 }
 
 .hero-logo {
-  width: 150px;
+  width: 140px;
   margin-bottom: 10px;
 }
 
 .bismillah {
+  font-family: 'Scheherazade New', serif;
   font-size: 26px;
-  margin-bottom: 10px;
-  color: #555;
+  color: #666;
+  margin-bottom: 8px;
 }
 
-.hero h2 {
-  font-size: 28px;
+.hero h1 {
+  font-size: 2.8rem;
+  margin: 5px 0 20px;
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
-/* Sections */
-.tile {
-  padding: 50px 20px;
-  max-width: 1100px;
-  margin: auto;
+/* PROGRAMS SECTION */
+.programs {
+  background: var(--alternate-background);
+  padding: 40px 20px;
 }
 
-.tile.alternate {
-  background-color: #f9f9f9;
-}
-
-.section-title {
+.programs h2 {
   text-align: center;
-  font-size: 32px;
-  margin-bottom: 40px;
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
-/* Programs */
 .program-grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .program-card {
   background: #fff;
-  border: 1px solid #ddd;
   border-radius: 12px;
   padding: 20px;
-  width: 320px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
 }
 
 .program-card h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .program-card p {
   font-size: 15px;
+  color: var(--light-text-color);
   margin-bottom: 20px;
-  color: #666;
 }
 
-/* Buttons */
 .program-buttons {
   display: flex;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
 }
 
-.btn, .btn-outline {
+.program-buttons a {
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 50px;
   font-weight: bold;
-  font-size: 14px;
   transition: 0.3s;
 }
 
-.btn {
-  background-color: #2f4f4f;
+.btn-primary {
+  background: var(--primary-color);
   color: #fff;
 }
 
-.btn-outline {
-  border: 2px solid #2f4f4f;
-  color: #2f4f4f;
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
-.btn:hover, .btn-outline:hover {
-  background-color: #1f3f3f;
+.btn-primary:hover,
+.btn-secondary:hover {
+  background: #1f3f3f;
   color: #fff;
 }
 
-/* Islamic Circles */
-.circle-content {
-  max-width: 800px;
-  margin: auto;
+/* ASHRAFIYYA CIRCLES SECTION */
+.circles {
+  padding: 40px 20px;
+}
+
+.circles h2 {
   text-align: center;
-}
-
-.circle-content p {
-  font-size: 16px;
+  font-size: 2rem;
   margin-bottom: 20px;
-  color: #555;
 }
 
-/* Subscribe */
-.subscribe-form {
-  max-width: 500px;
+.circles p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--light-text-color);
+}
+
+/* SUBSCRIBE SECTION */
+.subscribe {
+  background: var(--alternate-background);
+  padding: 50px 20px;
+}
+
+.subscribe h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.subscribe p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: var(--light-text-color);
+}
+
+form.subscribe-form {
+  max-width: 600px;
   margin: 0 auto;
   display: grid;
   gap: 15px;
 }
 
-.subscribe-form input,
-.subscribe-form textarea {
-  padding: 10px;
+form.subscribe-form input,
+form.subscribe-form textarea {
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 6px;
+  width: 100%;
 }
 
-.subscribe-form textarea {
-  resize: vertical;
+form.subscribe-form button {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Footer */
+form.subscribe-form button:hover {
+  background: #1f3f3f;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 20px 0;
+  padding: 20px;
   font-size: 14px;
-  background: #fafafa;
-  color: #777;
+  background: #000;
+  color: #aaa;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .program-grid {
+  .nav-container {
     flex-direction: column;
-    align-items: center;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
   }
 }
