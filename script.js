@@ -1,11 +1,15 @@
-// If you have a hamburger, script for toggle (optional if not needed)
-document.addEventListener('DOMContentLoaded', function() {
-  const menuButton = document.getElementById('menu-button');
-  const navLinks = document.getElementById('nav-links');
-
-  if (menuButton && navLinks) {
-    menuButton.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  }
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
 });
+
+// Optional: Basic mobile menu toggle (if you want it later)
+// Currently skipped because design is simple and clean
