@@ -10,6 +10,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
-// Optional: Basic mobile menu toggle (if you want it later)
-// Currently skipped because design is simple and clean
