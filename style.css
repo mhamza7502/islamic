@@ -1,3 +1,13 @@
+/* Global Variables */
+:root {
+  --primary-color: #2f4f4f;
+  --text-color: #1d1d1f;
+  --light-text: #666;
+  --background: #ffffff;
+  --alternate-background: #f9f9f9;
+  --button-radius: 999px;
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -5,205 +15,195 @@
   box-sizing: border-box;
 }
 
-/* Global Styles */
+/* Body */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fefefe;
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
+  background: var(--background);
+  color: var(--text-color);
 }
 
-/* Top Contact Banner */
-.top-banner {
-  background: #f9f9f9;
-  text-align: center;
-  font-size: 14px;
-  padding: 8px;
-  color: #666;
-  border-bottom: 1px solid #eee;
-}
-
-/* Header and Navigation */
+/* Header / Navigation */
 header {
-  background: white;
+  background: #fff;
   border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .nav-container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  position: relative;
 }
 
 .nav-links {
   display: flex;
   gap: 20px;
-  list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
 .nav-links a:hover {
-  color: #1d4d4d;
-}
-
-/* Hamburger Menu */
-.menu-button {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.menu-button span {
-  width: 25px;
-  height: 3px;
-  background: #333;
+  color: var(--primary-color);
 }
 
 /* Hero Section */
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 75vh;
+  padding: 30px 20px 20px;
   text-align: center;
-  padding: 80px 20px 40px;
+  gap: 20px;
 }
 
 .hero-logo {
   width: 150px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px auto;
+  display: block;
 }
 
-.bismillah {
-  font-family: 'Scheherazade New', serif;
-  font-size: 22px;
-  color: #777;
-  margin-bottom: 20px;
-}
-
-.hero h2 {
-  font-size: 32px;
-  font-weight: bold;
+.hero h1 {
+  font-size: 42px;
   margin-bottom: 10px;
 }
 
-/* Tile Sections */
-.tile, .tile.alternate {
-  padding: 80px 20px;
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--light-text);
 }
 
-.tile.alternate {
-  background: #f7f7f7;
+/* Button */
+.btn {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: var(--button-radius);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
 }
 
-/* Section Titles */
-.section-title {
+.btn:hover {
+  background: #1f3f3f;
+  transform: translateY(-2px);
+}
+
+/* Upcoming Programs Section */
+.programs {
+  background: var(--alternate-background);
+  padding: 60px 20px;
   text-align: center;
-  font-size: 28px;
+}
+
+.programs h2 {
+  font-size: 36px;
   margin-bottom: 40px;
 }
 
-/* Programs Grid */
 .program-grid {
   display: flex;
-  gap: 30px;
-  max-width: 1000px;
-  margin: auto;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 40px;
 }
 
 .program-card {
   background: white;
   border: 1px solid #ddd;
   padding: 30px 20px;
-  border-radius: 12px;
   width: 300px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
 .program-card h3 {
-  font-size: 22px;
   margin-bottom: 15px;
+  font-size: 22px;
 }
 
 .program-card p {
   font-size: 15px;
   margin-bottom: 20px;
-  color: #555;
+  color: var(--light-text);
 }
 
-.button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Buttons */
-.btn, .btn-outline {
+.program-card .btn {
+  margin: 5px;
   display: inline-block;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.btn {
-  background: #1d4d4d;
-  color: white;
+/* Islamic Circles Section */
+#circles {
+  padding: 60px 20px;
+  background: var(--background);
+  text-align: center;
 }
 
-.btn:hover {
-  background: #163636;
+#circles h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-.btn-outline {
-  border: 2px solid #1d4d4d;
-  color: #1d4d4d;
-  background: transparent;
+#circles p {
+  font-size: 18px;
+  color: var(--light-text);
 }
 
-.btn-outline:hover {
-  background: #1d4d4d;
-  color: white;
+/* Subscribe Section */
+#subscribe {
+  padding: 60px 20px;
+  background: var(--alternate-background);
+  text-align: center;
 }
 
-/* Subscribe Form */
+#subscribe h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#subscribe p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--light-text);
+}
+
 .subscribe-form {
-  max-width: 600px;
-  margin: 40px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.subscribe-form input, .subscribe-form textarea {
+.subscribe-form input,
+.subscribe-form textarea {
   padding: 12px;
-  border: 1px solid #ccc;
   border-radius: 8px;
+  border: 1px solid #ccc;
   font-size: 16px;
+  width: 100%;
 }
 
 .subscribe-form button {
-  margin-top: 10px;
+  width: 100%;
 }
 
 /* Footer */
-.footer {
-  background: #1d1d1f;
+footer {
+  background: var(--text-color);
   color: #ccc;
   text-align: center;
   padding: 20px;
@@ -215,38 +215,5 @@ header {
   .program-grid {
     flex-direction: column;
     align-items: center;
-  }
-
-  .menu-button {
-    display: flex;
-  }
-section.tile, section.tile.alternate {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
-}
-
-section#subscribe {
-  background: #f9f9f9;
-  text-align: center;
-}
-
-section#circles {
-  text-align: center;
-}
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    padding: 10px;
-  }
-
-  .nav-links.show {
-    display: flex;
   }
 }
