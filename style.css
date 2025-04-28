@@ -220,7 +220,20 @@ header {
   .menu-button {
     display: flex;
   }
+section.tile, section.tile.alternate {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
 
+section#subscribe {
+  background: #f9f9f9;
+  text-align: center;
+}
+
+section#circles {
+  text-align: center;
+}
   .nav-links {
     display: none;
     flex-direction: column;
