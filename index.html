@@ -7,108 +7,127 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
-
 <body>
 
-<!-- Top Contact Bar -->
-<div class="top-bar">
-  📞 (123) 456-7890 | ✉️ info@ashrafiyya.com
-</div>
-
-<!-- Navigation -->
-<header>
-  <nav class="nav-container">
-    <a href="#programs">Programs</a>
-    <a href="#circles">Ashrafiyya Circles</a>
-    <a href="#subscribe">Subscribe</a>
-  </nav>
-</header>
-
-<!-- Hero Section -->
-<section class="hero">
-  <img src="logo.png" alt="Ashrafiyya Logo" class="hero-logo">
-  <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</div>
-</section>
-
-<!-- Upcoming Programs -->
-<section id="programs" class="programs">
-  <h2>Upcoming Programs</h2>
-  <div class="program-grid">
-
-    <!-- Health Teasers Program -->
-    <div class="program-card">
-      <h3>Health Teasers Program at Rutgers University</h3>
-      <p>
-        Explore vital topics in health, medicine, and ethics through an Islamic lens.  
-        Hosted at Rutgers University, welcoming all — Muslim and non-Muslim — to thought-provoking discussions.
-      </p>
-      <ul>
-        <li>Date: Saturday, June 1, 2025</li>
-        <li>Time: 10:00 AM – 4:00 PM</li>
-        <li>Venue: Rutgers Livingston Campus, Student Center</li>
-        <li>Real-world ethical dilemmas discussed</li>
-        <li>Islamic scholars and healthcare professionals presenting</li>
-        <li>Community networking opportunity</li>
+  <!-- Navigation -->
+  <header>
+    <nav class="nav-container">
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="#">Programs ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="circles.html">Ashrafiyya Circles</a></li>
+            <li><a href="heart-of-care.html">The Heart of Care</a></li>
+            <li><a href="livesaver.html">Livesaver Course for Sisters</a></li>
+            <li><a href="itqan.html">Ashrafiyya Itqān</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="program-buttons">
-        <a href="#" class="btn-secondary">Download Flyer</a>
-        <a href="#" class="btn-primary">Register Now</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="logo.png" alt="Ashrafiyya Logo" class="hero-logo">
+    <div class="hero-tagline">Elevating Knowledge and Practice</div>
+    <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" style="padding:50px 20px; text-align:center;">
+    <h2>About Ashrafiyya</h2>
+    <p style="max-width:800px; margin:auto; line-height:1.8;">
+      At Ashrafiyya, we believe knowledge is a sacred journey.  
+      Rooted in the Islamic tradition, we bring together scholars, students, and professionals to elevate knowledge and practice through study, reflection, and service.
+    </p>
+  </section>
+
+  <!-- Programs Preview -->
+  <section id="programs" class="programs">
+    <h2>Upcoming Programs</h2>
+    <div class="program-grid">
+
+      <!-- The Heart of Care -->
+      <div class="program-card">
+        <h3>The Heart of Care<br><small>Centering Islamic Ethics in Modern Medicine</small></h3>
+        <p>
+          Why is the Islamic tradition essential for those preparing for a career in healthcare?  
+          This session explores the insights of al-Ruhāwī—the earliest known author on Islamic bioethics—and discusses how his vision of the ethical healer can guide contemporary practice.
+        </p>
+        <ul>
+          <li><strong>Date:</strong> September 30, 2025</li>
+          <li><strong>Time:</strong> ~7PM</li>
+          <li><strong>Venue:</strong> MPR Busch</li>
+        </ul>
+        <div class="program-buttons">
+          <a href="heart-of-care.html" class="btn-primary">Learn More</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Scholarship Program -->
-    <div class="program-card">
-      <h3>Ashrafiyya Itqān Scholarship Program</h3>
-      <p>
-        <span></span>
-        <span></span>
-        Supporting passionate students pursuing Islamic knowledge with ihsan (excellence).
-        The Itqān Scholarship removes financial barriers and provides tuition and educational support.
-      </p>
-      <ul>
-        <li>Application Opens: May 10, 2025</li>
-        <li>Application Deadline: July 15, 2025</li>
-        <li>Eligibility: Students enrolled in traditional Islamic studies</li>
-        <li>Support: Partial to Full Tuition Sponsorship</li>
-        <span></span>
-        <span></span>
-      </ul>
-      <div class="program-buttons">
-        <a href="#" class="btn-secondary">View Details</a>
-        <a href="#" class="btn-primary">Apply Now</a>
+      <!-- Livesaver Course for Sisters -->
+      <div class="program-card">
+        <h3>Livesaver Course for Sisters</h3>
+        <p>Details coming soon—Insha’Allah we will share dates, location, and registration information here shortly.</p>
+        <div class="program-buttons">
+          <a href="livesaver.html" class="btn-primary">Learn More</a>
+        </div>
       </div>
+
+      <!-- Ashrafiyya Itqān -->
+      <div class="program-card">
+        <h3>Ashrafiyya Itqān<br><small>Al-Durr al-Mukhtār Study Program</small></h3>
+        <p>
+          A rare opportunity for graduates and advanced students to engage the influential Ḥanafī text <em>Al-Durr al-Mukhtār</em> through structured group readings—paired with Ibn ʿĀbidīn’s <em>Radd al-Muḥtār</em> for deeper fiqh understanding.
+        </p>
+        <ul>
+          <li><strong>Starts:</strong> May 18 (by invite only)</li>
+        </ul>
+        <div class="program-buttons">
+          <a href="itqan.html" class="btn-primary">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Ashrafiyya Circles -->
+      <div class="program-card">
+        <h3>Ashrafiyya Circles</h3>
+        <p>
+          Focused, seminar-style learning rooted in the Islamic tradition.  
+          Brings together students and scholars for discussions on belief, law, and practice.
+        </p>
+        <ul>
+          <li>Upcoming: “Tartīb al-‘Ulūm”</li>
+          <li>Upcoming: “Kayfiyya al-Ṣalāh”</li>
+        </ul>
+        <div class="program-buttons">
+          <a href="circles.html" class="btn-primary">Learn More</a>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- Contact / Subscribe -->
+  <section id="contact" class="subscribe">
+    <h2>Contact</h2>
+    <p>Email us at <a href="mailto:info@ashrafiyya.com">info@ashrafiyya.com</a></p>
+    <form class="subscribe-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Comments or Interests" rows="3"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div style="margin-top:15px;">
+      <a href="#" class="btn-secondary">Join our WhatsApp/Telegram Group</a>
+    </div>
+  </section>
 
-<!-- Ashrafiyya Circles -->
-<section id="circles" class="circles">
-  <h2>Ashrafiyya Circles</h2>
-  <p>
-    Monthly gatherings offering Qur’anic reflection, Hadith study, and spiritual purification lessons — rooted in traditional Islamic scholarship and open to sincere seekers.
-  </p>
-  <div style="text-align:center; margin-top:20px;">
-    <a href="#" class="btn-primary">Learn More</a>
-  </div>
-</section>
-
-<!-- Subscribe Section -->
-<section id="subscribe" class="subscribe">
-  <h2>Stay Connected</h2>
-  <p>Kindly subscribe to receive updates about our upcoming events and programs, Insha'Allah.</p>
-  <form class="subscribe-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Comments or Interests" rows="3"></textarea>
-    <button type="submit">Subscribe</button>
-  </form>
-</section>
-
-<!-- Footer -->
-<footer>
-  &copy; 2025 Ashrafiyya. All Rights Reserved.
-</footer>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Ashrafiyya. All Rights Reserved. • 📞 (123) 456-7890 • ✉️ info@ashrafiyya.com
+  </footer>
 
 </body>
 </html>
