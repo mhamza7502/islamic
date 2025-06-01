@@ -149,6 +149,35 @@ body {
   width: 100%;
 }
 
+/* Add specific styling for exactly 3 cards */
+@media screen and (min-width: 769px) and (max-width: 999px) {
+  /* Modern browsers with :has support */
+  .program-grid:has(:nth-child(3):last-child) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .program-grid:has(:nth-child(3):last-child) > :last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  /* Fallback for browsers without :has support */
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .program-grid > :nth-child(3):last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
 /* Base program card styles */
 .program-card-v2,
 .program-card-v4 {
@@ -985,4 +1014,17 @@ footer {
 #previous-programs .program-card-v4 {
   background: #ffffff;
   border: 2px solid #2d4d46;
+}
+
+/* Add specific styling for single card in previous programs */
+@media screen and (min-width: 769px) and (max-width: 999px) {
+  /* Modern browsers with :has support */
+  #previous-programs .program-grid:has(:first-child:last-child) {
+    grid-template-columns: 1fr;
+  }
+
+  /* Fallback for browsers without :has support */
+  #previous-programs .program-grid > :first-child:nth-last-child(1) {
+    width: 100%;
+  }
 }
