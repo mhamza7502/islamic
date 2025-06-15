@@ -27,7 +27,7 @@ html, body {
 .social-media {
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 1.5rem 1.25rem;
   box-sizing: border-box;
   max-width: 1200px;
 }
@@ -100,6 +100,12 @@ h2, h3, h4 {
   overflow-wrap: break-word;
 }
 
+h2 {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
 /* Branch Introduction */
 .branches-intro {
   display: grid;
@@ -116,13 +122,21 @@ h2, h3, h4 {
   background: #FFFFFF;
   border: 4px solid #A69873;
   border-radius: 0.75rem;
+  -webkit-border-radius: 0.75rem;
+  -moz-border-radius: 0.75rem;
   transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(166, 152, 115, 0.1);
+  -webkit-box-shadow: 0 2px 4px rgba(166, 152, 115, 0.1);
+  -moz-box-shadow: 0 2px 4px rgba(166, 152, 115, 0.1);
 }
 
 .branch-intro-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(166, 152, 115, 0.1);
+  -webkit-box-shadow: 0 4px 8px rgba(166, 152, 115, 0.1);
+  -moz-box-shadow: 0 4px 8px rgba(166, 152, 115, 0.1);
 }
 
 .branch-intro-item img {
@@ -149,8 +163,8 @@ h2, h3, h4 {
 /* Programs */
 .programs {
   text-align: center;
-  margin-bottom: 1.25rem;
-  padding: 0 1.25rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.25rem;
 }
 
 .program-grid {
@@ -163,12 +177,15 @@ h2, h3, h4 {
 
 #previous-programs {
   width: 100%;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
 }
 
 #previous-programs .program-grid {
   width: 100%;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 730px) and (max-width: 999px) {
@@ -178,7 +195,8 @@ h2, h3, h4 {
   }
 
   #previous-programs .program-grid {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
   }
 
@@ -198,7 +216,11 @@ h2, h3, h4 {
 .program-card-v4 {
   padding: 1.5625rem;
   border-radius: 0.75rem;
+  -webkit-border-radius: 0.75rem;
+  -moz-border-radius: 0.75rem;
   box-shadow: 0 2px 4px rgba(166, 152, 115, 0.1);
+  -webkit-box-shadow: 0 2px 4px rgba(166, 152, 115, 0.1);
+  -moz-box-shadow: 0 2px 4px rgba(166, 152, 115, 0.1);
   text-align: left;
   position: relative;
   display: flex;
@@ -239,14 +261,15 @@ h2, h3, h4 {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-top: 25px;
+}
+
+.program-item:first-child {
+  margin-top: 0;
 }
 
 .program-item:not(:last-child) {
   margin-bottom: 25px;
-}
-
-.program-item:first-child {
-  margin-bottom: 0;
 }
 
 .program-item:not(:last-child) .divider {
@@ -282,10 +305,6 @@ h2, h3, h4 {
   margin-bottom: 0.9375rem;
   color: #21422E;
   font-weight: 600;
-}
-
-.program-item:first-child h4 {
-  margin-top: 25px;
 }
 
 .program-item p {
@@ -439,7 +458,12 @@ h2, h3, h4 {
   .about,
   .programs,
   .social-media {
-    padding: 0 1rem;
+    padding: 1.5rem 1.25rem;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
   }
 
   .branches-intro {
@@ -535,7 +559,12 @@ h2, h3, h4 {
   .about,
   .programs,
   .social-media {
-    padding: 0 0.75rem;
+    padding: 1.5rem 1.25rem;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
   }
 
   .program-card {
@@ -599,7 +628,12 @@ h2, h3, h4 {
   .about,
   .programs,
   .social-media {
-    padding: 0 0.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
   }
 
   .program-card {
@@ -662,8 +696,8 @@ h2, h3, h4 {
 /* About section spacing */
 .about {
   text-align: center;
-  margin-bottom: 1.25rem;
-  padding: 0 1.25rem;
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .about p {
@@ -823,7 +857,11 @@ img, svg {
   color: white;
   text-decoration: none;
   border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
 }
 
 .insta-link-light {
