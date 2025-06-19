@@ -20,6 +20,48 @@ html, body {
   background-color: #FFFFFF;
 }
 
+/* Force layout recalculation on orientation change */
+@media screen and (orientation: landscape) {
+  .program-card-v2,
+  .program-card-v4 {
+    min-height: auto;
+    height: auto;
+  }
+  
+  .program-grid {
+    align-items: stretch;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .program-card-v2,
+  .program-card-v4 {
+    min-height: auto;
+    height: auto;
+  }
+}
+
+/* Universal layout fixes for all devices */
+@media screen and (min-width: 320px) {
+  .program-card-v2,
+  .program-card-v4 {
+    height: auto !important;
+    min-height: auto !important;
+  }
+  
+  .program-grid {
+    align-items: stretch !important;
+  }
+  
+  .programs-list {
+    height: auto !important;
+  }
+  
+  .button-container {
+    flex-shrink: 0 !important;
+  }
+}
+
 /* Content wrapper */
 .hero,
 .about,
@@ -225,13 +267,14 @@ h2 {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: auto;
   background: #FFFFFF;
   border: 2px solid #2E5C41;
   color: #21422E;
   min-width: 0;
   word-break: break-word;
   overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 /* Card headings */
@@ -253,12 +296,16 @@ h2 {
 .programs-list {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  overflow: visible;
 }
 
 .program-item {
   display: flex;
   flex-direction: column;
   position: relative;
+  flex-shrink: 0;
+  overflow: visible;
 }
 
 .program-item:first-child {
@@ -342,6 +389,7 @@ h2 {
   padding-top: 0.5rem;
   margin-bottom: 0;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .registration-button,
@@ -357,6 +405,7 @@ h2 {
   transition: all 0.2s ease;
   border: none;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .registration-button:hover,
@@ -537,12 +586,21 @@ h2 {
   
   footer {
     margin: 0;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+  }
+  
+  /* Force proper layout on mobile */
+  .program-card-v2,
+  .program-card-v4 {
+    height: auto !important;
+    min-height: auto !important;
+  }
+  
+  .program-grid {
+    align-items: stretch !important;
+  }
+  
+  .programs-list {
+    height: auto !important;
   }
 }
 
