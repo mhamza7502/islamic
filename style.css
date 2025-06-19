@@ -251,34 +251,26 @@ h2 {
 
 /* Programs list */
 .programs-list {
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .program-item {
-  flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: 25px;
 }
 
 .program-item:first-child {
-  margin-top: 0;
+  /* margin-top: 0; removed for tighter spacing */
 }
 
 .program-item:not(:last-child) {
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; removed for even spacing */
 }
 
 .program-item:not(:last-child) .divider {
-  display: block;
-  text-align: center;
-  position: relative;
-  font-size: 10px;
-  color: rgba(33, 66, 46, 0.3);
-  margin: 40px 0 25px;
+  margin: 32px 0 !important;
 }
 
 .program-item:not(:last-child) .divider::before,
@@ -303,7 +295,7 @@ h2 {
   font-size: 1.25rem;
   margin-top: 0;
   margin-bottom: 0.9375rem;
-  color: #21422E;
+  color: #A69873;
   font-weight: 600;
 }
 
@@ -346,8 +338,8 @@ h2 {
 
 /* Button container and registration button */
 .button-container {
-  margin-top: auto;
-  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
   margin-bottom: 0;
   text-align: center;
 }
@@ -874,4 +866,61 @@ img, svg {
 
 .insta-link-light:hover {
   background-color: #21422E;
+}
+
+.event-details-multi {
+  margin: 1.25rem 0 1.5rem 0;
+  text-align: left;
+}
+
+.event-intro {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: #21422E;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  display: block;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.event-card {
+  background: transparent;
+  border: 2px solid #A69873;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(166, 152, 115, 0.07);
+}
+
+.event-card:last-child {
+  margin-bottom: 0;
+}
+
+.event-card div {
+  margin-bottom: 0.25rem;
+  font-size: 0.9375rem;
+}
+
+.event-card .detail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: #21422E;
+  font-size: 0.9em;
+}
+
+.divider {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 10px;
+  color: rgba(33, 66, 46, 0.3);
+  margin: 32px 0 !important;
+}
+
+.program-item:not(:last-child) .divider {
+  margin: 32px 0 !important;
 }
