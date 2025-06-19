@@ -1,10 +1,42 @@
-// Smooth scroll for nav links
+// Cross-browser compatibility utilities
+const isIE = /*@cc_on!@*/false || !!document.documentMode;
+const isEdge = !isIE && !!window.StyleMedia;
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+// Smooth scroll for nav links with cross-browser support
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      // Check if smooth scrolling is supported
+      if ('scrollBehavior' in document.documentElement.style) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Fallback for older browsers
+        const targetPosition = target.offsetTop;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1000;
+        let start = null;
+        
+        function animation(currentTime) {
+          if (start === null) start = currentTime;
+          const timeElapsed = currentTime - start;
+          const run = ease(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+        
+        function ease(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t + b;
+          t--;
+          return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+        
+        requestAnimationFrame(animation);
+      }
     }
   });
 });
@@ -48,16 +80,101 @@ function fixLayoutIssues() {
 }
 
 // Handle orientation changes (mobile devices)
-window.addEventListener('orientationchange', fixLayoutIssues);
+if (window.addEventListener) {
+  window.addEventListener('orientationchange', fixLayoutIssues);
+}
 
 // Handle resize events (all devices)
-window.addEventListener('resize', fixLayoutIssues);
+if (window.addEventListener) {
+  window.addEventListener('resize', fixLayoutIssues);
+}
 
 // Handle window focus events (when switching between tabs/apps)
-window.addEventListener('focus', fixLayoutIssues);
+if (window.addEventListener) {
+  window.addEventListener('focus', fixLayoutIssues);
+}
 
 // Handle DOM content loaded to ensure initial layout is correct
-document.addEventListener('DOMContentLoaded', fixLayoutIssues);
+if (document.addEventListener) {
+  document.addEventListener('DOMContentLoaded', fixLayoutIssues);
+}
 
 // Handle load event to catch any late layout issues
-window.addEventListener('load', fixLayoutIssues);
+if (window.addEventListener) {
+  window.addEventListener('load', fixLayoutIssues);
+}
+
+// Additional cross-browser compatibility fixes
+function addCrossBrowserSupport() {
+  // Fix for IE11 and older browsers that don't support CSS Grid
+  if (isIE || !CSS.supports('display', 'grid')) {
+    const grids = document.querySelectorAll('.program-grid, .branches-intro');
+    grids.forEach(grid => {
+      grid.style.display = 'flex';
+      grid.style.flexWrap = 'wrap';
+      
+      const children = grid.children;
+      for (let i = 0; i < children.length; i++) {
+        children[i].style.flex = '1 1 300px';
+        children[i].style.margin = '15px';
+      }
+    });
+  }
+  
+  // Fix for browsers that don't support gap property
+  if (!CSS.supports('gap', '1rem')) {
+    const elementsWithGap = document.querySelectorAll('.program-grid, .social-buttons, .branches-intro');
+    elementsWithGap.forEach(element => {
+      const children = element.children;
+      for (let i = 0; i < children.length; i++) {
+        children[i].style.margin = '15px';
+      }
+    });
+  }
+  
+  // Fix for Safari flexbox issues
+  if (isSafari) {
+    const flexContainers = document.querySelectorAll('.programs-list, .social-buttons');
+    flexContainers.forEach(container => {
+      container.style.display = 'flex';
+      if (container.classList.contains('programs-list')) {
+        container.style.flexDirection = 'column';
+      }
+      if (container.classList.contains('social-buttons')) {
+        container.style.justifyContent = 'center';
+      }
+    });
+  }
+}
+
+// Apply cross-browser fixes when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', addCrossBrowserSupport);
+} else {
+  addCrossBrowserSupport();
+}
+
+// Fix for touch devices
+if ('ontouchstart' in window) {
+  document.body.classList.add('touch-device');
+  
+  // Add touch-specific event listeners
+  const touchElements = document.querySelectorAll('.social-button, .insta-link, .branch-intro-item');
+  touchElements.forEach(element => {
+    element.addEventListener('touchstart', function() {
+      this.style.transform = 'scale(0.98)';
+    });
+    
+    element.addEventListener('touchend', function() {
+      this.style.transform = '';
+    });
+  });
+}
+
+// Ensure proper font loading
+if ('fonts' in document) {
+  document.fonts.ready.then(function() {
+    // Fonts are loaded, trigger layout recalculation
+    fixLayoutIssues();
+  });
+}
